@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Home</title>
+  </head>
+  <body onload="carregar()">
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><a href="./login.html">Sign-in</a></li>
+          <li onclick="logoff()">Sair</li>
+          <li>Comissão:<span id="comissao"></span></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card model">
+        <div id="info">
+          <p id="codigo">KSA12134</p>
+          <p id="endereco">Rua teste</p>
+        </div>
+        <div id="valores">
+          <p id="venda">R$ 3000000</p>
+          <p id="aluguel">R$ 3000</p>
+        </div>
+        <p id="status"></p>
+        <div class="opcoes">
+          <button onclick="alterarStatus(2)">Alugar</button>
+          <button onclick="alterarStatus(3)">Vender</button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./js/home.js"></script>
+</html>
