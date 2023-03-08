@@ -1,31 +1,35 @@
 @import url("./global.css");
 
-#hello {
-  margin-left: 5rem;
-}
 main {
   display: flex;
+  flex-direction: column;
   padding: 50px;
+  gap: 20px;
 }
-.card-control {
-  width: 200px;
-  height: 100px;
-  margin-left: 50px;
-  border: 1px solid #000;
+.card {
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
   border-radius: 7px;
   padding: 20px;
 }
-.card-control p {
+.opcoes {
+  display: flex;
+  flex-direction: column;
+}
+.card p {
   margin-bottom: 5px;
 }
-.card-control button {
-  margin-top: 7px;
-  margin-left: 100px;
+.card button {
+  margin-top: 10px;
+  margin-left: 10px;
   padding: 5px;
   border-radius: 7px;
-  border: 1px solid #000;
+  border: 1px solid;
 }
-.card-control button:hover {
-  background-color: #c3c3c3;
+.card button:hover {
   cursor: pointer;
+}
+.model {
+  display: none;
 }

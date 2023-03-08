@@ -101,6 +101,29 @@ const deletar = (req, res) => {
   });
 };
 
+const imoveisPorCorretor = (req, res) => {
+  const { id } = req.params;
+
+  let query = `SELECT
+  i.codigo,
+  i.endereco,
+  i.valor_venda AS venda,
+  i.valor_aluguel AS aluguel,
+  s.nome
+FROM
+  imovel i
+  INNER JOIN status s ON i.status_id = s.id
+WHERE
+  i.corretor_id = ${id}`;
+
+  pool.query(query, function (err, resp) {
+    if (err) {
+      res.status(400).json(err).end();
+    }
+    res.status(200).json(resp).end();
+  });
+};
+
 module.exports = {
   listar,
   buscar,
@@ -108,4 +131,5 @@ module.exports = {
   atualizar,
   alterarStatus,
   deletar,
+  imoveisPorCorretor,
 };

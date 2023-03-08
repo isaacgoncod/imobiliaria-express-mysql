@@ -75,3 +75,18 @@ VALUES
     5500,
     2
   );
+
+  
+
+--ImovelController.imoveisPorCorretor()
+SELECT
+  i.codigo,
+  i.endereco,
+  i.valor_venda AS venda,
+  i.valor_aluguel AS aluguel,
+  s.nome
+FROM
+  imovel i
+  INNER JOIN status s ON i.status_id = s.id
+WHERE
+  i.corretor_id = --${id}
